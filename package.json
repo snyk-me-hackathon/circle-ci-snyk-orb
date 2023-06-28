@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/snyk-me-hackathon/circle-ci-snyk-orb/issues"
   },
-  "homepage": "https://github.com/snyk-me-hackathon/circle-ci-snyk-orb#readme"
+  "homepage": "https://github.com/snyk-me-hackathon/circle-ci-snyk-orb#readme",
+  "dependencies": {
+    "react": "^18.2.0"
+  }
 }
