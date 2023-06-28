@@ -1,0 +1,20 @@
+{
+  "name": "circle-ci-snyk-orb",
+  "version": "1.0.0",
+  "description": "A repository with a circle ci snyk orb setup",
+  "main": "hello.js",
+  "scripts": {
+    "build": "echo 'running build'",
+    "test": "echo 'running test'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snyk-me-hackathon/circle-ci-snyk-orb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snyk-me-hackathon/circle-ci-snyk-orb/issues"
+  },
+  "homepage": "https://github.com/snyk-me-hackathon/circle-ci-snyk-orb#readme"
+}

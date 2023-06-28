@@ -6,16 +6,13 @@ executors:
       image: ubuntu-2004:202010-01
 
 jobs:
-  build:
+  build_and_test:
     executor: default-executor
     steps:
       - checkout
-      - run: echo "this is the build job"
-  test:
-    executor: default-executor
-    steps:
-      - checkout
-      - run: echo "this is the test job"
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test
 
   deploy:
     executor: default-executor
@@ -26,9 +23,7 @@ jobs:
 workflows:
   build_test_deploy:
     jobs:
-      - build
-      - test
+      - build_and_test
       - deploy:
           requires:
-            - build
-            - test
+            - build_and_test
