@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  snyk: snyk/snyk@1.7.0
+
 executors:
   default-executor:
     machine:
@@ -13,6 +16,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run test
+      - snyk/scan
 
   deploy:
     executor: default-executor
@@ -23,7 +27,9 @@ jobs:
 workflows:
   build_test_deploy:
     jobs:
-      - build_and_test
+      - build_and_test:
+          context:
+            - snyk-security
       - deploy:
           requires:
             - build_and_test
